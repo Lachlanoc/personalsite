@@ -1,10 +1,9 @@
 ---
 title: 'Hello, world!'
-layout: 'posts'
-slug: hello-world
+date: "2025-07-01"
 ---
 
-## This is my first post!
+## This isfdssdf my first post!
 
 This is another example of an MDX-powered page in Next.js.
 

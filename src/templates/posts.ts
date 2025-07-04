@@ -8,10 +8,10 @@ export function getPostSlugs() {
   return fs.readdirSync(postsDir)
 }
 
-export function getPostBySlug(slug: string) {
+export async function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.mdx$/, '')
   const filePath = path.join(postsDir, `${realSlug}.mdx`)
-  const fileContents = fs.readFileSync(filePath, 'utf-8')
+  const fileContents = await fs.promises.readFile(filePath, 'utf-8')
   const { data, content } = matter(fileContents)
 
   return {
@@ -20,4 +20,3 @@ export function getPostBySlug(slug: string) {
     content,
   }
 }
-
